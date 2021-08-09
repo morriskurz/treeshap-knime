@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<knimeNode icon="./TreeSHAP.png" type="Predictor" xmlns="http://knime.org/node/v2.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://knime.org/node/v2.10 http://knime.org/node/v2.10.xsd">
+    <name>TreeSHAP Tree Ensemble (Regression)</name>
+    
+    <shortDescription>
+        Computes the SHAP values for regression tree ensembles quickly and exactly.
+    </shortDescription>
+    
+    <fullDescription>
+        <intro>
+        <p>SHAP (SHapley Additive exPlanations) is a game 
+        theoretic approach to explain the output of any machine 
+        learning model. It connects optimal credit allocation with 
+        local explanations using the classic Shapley values from 
+        game theory and their related extensions. While SHAP can 
+        explain the output of any machine learning model, 
+        Lundberg and his collaborators have developed a high-speed 
+        exact algorithm for tree ensemble methods <a href="https://github.com/slundberg/shap">[1]</a>, 
+        <a href="https://proceedings.neurips.cc/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html">[2]</a>.
+        </p>
+        
+        <h4>
+			Usage
+		</h4>
+		
+		<p>
+		The Tree SHAP Tree Ensemble (Regression) Predictor is used as a substitute to the
+		Tree Ensemble Predictor (Regression). Simply replace every Tree Ensemble Predictor (Regression) with this 
+		node to get started. If you are using a different tree based method, consider the 
+		other nodes in this package.
+		</p>
+		
+		<h4>
+			Interpretation
+		</h4>
+		
+		<p>
+		The beautiful thing about SHAP values is the intuitive interpretation.
+		Every model has an expected output, the average prediction. The model prediction 
+		for a data row is the expected output plus the summation of SHAP values.
+		This leads to intuitive explanations, for example in revenue forecasts for customers
+		"The high interaction of the customer with the product website over the last three months
+		contributed 1200 euros to the predicted revenue next year.".
+		</p>
+				<h4>
+			Enterprise Support
+		</h4>
+		
+		<p>
+		If you need help integrating explainable machine learning methods
+		 in your company, please contact me at morriskurz@gmail.com
+		</p>
+		<h4>
+			Credits
+		</h4>
+		<p>
+		All credits to the original research and development of the C++ and Python code
+		go to Lundberg and his collaborators.</p>
+        </intro>
+        
+        <tab name="Options">
+        <option name="Change prediction column name">
+           Select if you want to change the name of the column containing the prediction.
+        </option>
+        <option name="Prediction column name">The name of the column that will contain the prediction of the tree ensemble model</option>
+                <option name="Show explanation">
+        	Activate this to compute the SHAP values. If this box is unchecked, the node is equivalent to a simple predictor node.
+        </option>
+                <option name="Compute interactions">
+        	Computes the Shapley interaction values exactly. WARNING: Computationally expensive. 
+        	The runtime increases by 2 * #features compared to the SHAP values without interactions.
+        </option>
+        </tab>
+    </fullDescription>
+    
+    <ports>
+        <inPort index="0" name="Tree Ensemble Model">The output of the Tree Ensemble Learner (Regression).
+		</inPort>
+        <inPort index="1" name="Input data">Data to be predicted and explained.</inPort>
+        <outPort index="0" name="Explanation output">The input data along with prediction
+			columns and corresponding SHAP values.</outPort>
+    </ports>    
+
+
+</knimeNode>

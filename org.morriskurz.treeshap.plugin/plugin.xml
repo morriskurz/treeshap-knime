@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+      <extension
+         point="org.knime.workbench.repository.categories">
+      <category
+            description="TreeSHAP nodes by Morris Kurz, morriskurz@gmail.com"
+            icon="icons/categoryIcon.png"
+            level-id="treeshap"
+            name="TreeSHAP"
+            path="/community"/>
+   </extension>
+   <extension
+         point="org.knime.workbench.repository.nodes">
+      <node
+          category-path="/community/treeshap"
+          factory-class="org.morriskurz.classification.TreeSHAPNodeFactory"/>
+      <node
+          category-path="/community/treeshap"
+          factory-class="org.morriskurz.regression.TreeSHAPRegressionNodeFactory"/>
+      <node
+          category-path="/community/treeshap"
+          factory-class="org.morriskurz.gradientboosted.regression.TreeSHAPRegressionNodeFactory"/>
+      <node
+          category-path="/community/treeshap"
+          factory-class="org.morriskurz.gradientboosted.classification.GBTSHAPNodeFactory"/>
+      <node
+          category-path="/community/treeshap"
+          factory-class="org.morriskurz.classification.TreeSHAPRandomForestNodeFactory">
+      </node>
+      <node
+          category-path="/community/treeshap"
+         factory-class="org.morriskurz.regression.TreeSHAPRandomForestRegressionNodeFactory">
+      </node>
+   </extension>
+</plugin>

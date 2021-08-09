@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.morriskurz.treeshap.feature" version="0.0.0">
+      <category name="morriskurz-treeshap-repository"/>
+   </feature>
+   <feature id="org.morriskurz.treeshap.feature.source" version="0.0.0">
+      <category name="morriskurz-treeshap-repository"/>
+   </feature>
+   <category-def name="morriskurz-treeshap-repository" label="Build artifacts from morriskurz-treeshap-repository">
+      <description>
+         Build artifacts from morriskurz-treeshap-repository
+      </description>
+   </category-def>
+</site>
