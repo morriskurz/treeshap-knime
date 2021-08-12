@@ -1,8 +1,8 @@
 /** */
 package org.morriskurz.regression;
 
-import org.apache.commons.math.stat.descriptive.moment.Mean;
-import org.apache.commons.math.stat.descriptive.moment.Variance;
+import org.apache.commons.math3.stat.descriptive.moment.Mean;
+import org.apache.commons.math3.stat.descriptive.moment.Variance;
 import org.knime.base.node.mine.treeensemble2.data.PredictorRecord;
 import org.knime.base.node.mine.treeensemble2.model.TreeEnsembleModel;
 import org.knime.base.node.mine.treeensemble2.model.TreeEnsembleModelPortObjectSpec;
