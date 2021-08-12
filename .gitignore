@@ -3,3 +3,6 @@
 **/build/
 **/.flattened-pom.xml
 org.morriskurz.treeshap.plugin/treeshap.jar
+.polyglot..META-INF_MANIFEST.MF
+*.takari_issue_192
+*.META-INF_MANIFEST.MF
